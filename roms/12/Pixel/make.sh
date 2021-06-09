@@ -30,6 +30,8 @@ sed -i "/dataservice_app/d" $1/system_ext/etc/selinux/system_ext_seapp_contexts
 rm -rf $1/system_ext/priv-app/HbmSVManager
 
 # Fix boot
+rm -rf $1/../init.environ.rc
+cp -vrp $thispath/init.environ.rc $1/../init.environ.rc
 
 # Fix decrypted issue (maybe?)
 echo "rm -rf /data/system/storage.xml" >> $1/bin/cppreopts.sh
