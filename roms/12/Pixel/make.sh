@@ -25,6 +25,7 @@ echo "ro.com.google.ime.theme_id=5" >> $1/product/etc/build.prop
 echo "ro.com.google.ime.system_lm_dir=/product/usr/share/ime/google/d3_lms" >> $1/product/etc/build.prop
 sed -i "/dataservice_app/d" $1/product/etc/selinux/product_seapp_contexts
 sed -i "/dataservice_app/d" $1/system_ext/etc/selinux/system_ext_seapp_contexts
+sed -i "/ro.sys.sdcardfs/d" $1/product/etc/build.prop
 
 # Drop HbmSVManager which is crashing light hal
 rm -rf $1/system_ext/priv-app/HbmSVManager
@@ -37,4 +38,4 @@ cp -vrp $thispath/init.environ.rc $1/../init.environ.rc
 echo "rm -rf /data/system/storage.xml" >> $1/bin/cppreopts.sh
 
 # Enable Sexy theme by default
-echo "ro.boot.vendor.overlay.theme=com.google.android.systemui.gxoverlay" >> $1/system_ext/etc/build.prop
+echo "ro.boot.vendor.overlay.theme=com.google.android.systemui.gxoverlay" >> $1/build.prop
