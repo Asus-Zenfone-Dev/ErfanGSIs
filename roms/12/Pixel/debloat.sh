@@ -33,6 +33,9 @@ rm -rf $1/product/app/DevicePolicyPrebuilt
 rm -rf $1/product/app/GoogleTTS
 rm -rf $1/product/app/MobileFeliCaMenuMainApp
 rm -rf $1/product/app/MobileFeliCaClient
+rm -rf $1/product/priv-app/Velvet
+rm -rf $1/product/priv-app/TurboPrebuilt
+rm -rf $1/product/priv-app/TipsPrebuilt
 rm -rf $1/product/priv-app/BetaFeedback
 rm -rf $1/product/priv-app/HelpRtcPrebuilt
 rm -rf $1/product/priv-app/MyVerizonServices

@@ -10,7 +10,6 @@ cp -fpr $thispath/overlay/* $1/product/overlay/
 rsync -ra $thispath/system/ $1
 
 # Append file_context
-echo "ro.boot.vendor.overlay.theme=com.google.android.theme.pixel" >> $1/product/etc/build.prop
 echo "ro.config.ringtone=The_big_adventure.ogg" >> $1/product/etc/build.prop
 echo "ro.config.notification_sound=Popcorn.ogg" >> $1/product/etc/build.prop
 echo "ro.config.alarm_alert=Bright_morning.ogg" >> $1/product/etc/build.prop
@@ -36,6 +35,14 @@ cp -vrp $thispath/init.environ.rc $1/../init.environ.rc
 
 # Fix decrypted issue (maybe?)
 echo "rm -rf /data/system/storage.xml" >> $1/bin/cppreopts.sh
+rm -rf $1/product/etc/security/avb
 
 # Enable Sexy theme by default
-echo "ro.boot.vendor.overlay.theme=com.google.android.systemui.gxoverlay" >> $1/build.prop
+echo "ro.boot.vendor.overlay.theme=com.google.android.systemui.gxoverlay" >> $1/product/etc/build.prop
+
+# More fixes
+echo "ro.com.google.ime.height_ratio=1.0" >> $1/product/etc/build.prop
+sed -i "s/ro.debuggable=0/ro.debuggable=1/g" $1/build.prop
+sed -i "s/persist.sys.usb.config=none/persist.sys.usb.config=adb/g" $1/system_ext/etc/build.prop
+sed -i "/on property:vendor.sys.usb.adb.disabled/d " $1/etc/init/hw/init.usb.rc
+sed -i "/setprop sys.usb.adb.disabled/d " $1/etc/init/hw/init.usb.rc
