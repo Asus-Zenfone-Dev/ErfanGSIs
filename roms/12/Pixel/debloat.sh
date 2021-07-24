@@ -26,10 +26,10 @@ rm -rf $1/product/app/WallpapersBReel*
 rm -rf $1/product/app/Music2
 rm -rf $1/product/app/Photos
 rm -rf $1/product/app/Videos
-rm -rf $1/product/app/CalculatorGooglePrebuilt
+#rm -rf $1/product/app/CalculatorGooglePrebuilt
 #rm -rf $1/product/app/Chrome
 #rm -rf $1/product/app/Chrome-Stub
-rm -rf $1/product/app/DevicePolicyPrebuilt
+#rm -rf $1/product/app/DevicePolicyPrebuilt
 rm -rf $1/product/app/GoogleTTS
 rm -rf $1/product/app/MobileFeliCaMenuMainApp
 rm -rf $1/product/app/MobileFeliCaClient
@@ -42,7 +42,7 @@ rm -rf $1/product/priv-app/MyVerizonServices
 rm -rf $1/product/priv-app/OTAConfigPrebuilt
 rm -rf $1/product/priv-app/RecorderPrebuilt
 #rm -rf $1/product/priv-app/SafetyHubLprPrebuilt
-rm -rf $1/product/priv-app/ScribePrebuilt
+#rm -rf $1/product/priv-app/ScribePrebuilt
 rm -rf $1/product/priv-app/PrebuiltGmsCoreQt/app_chimera
 rm -rf $1/product/priv-app/PrebuiltGmsCore/app_chimera
 rm -rf $1/product/priv-app/ConnMO
