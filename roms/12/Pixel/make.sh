@@ -46,3 +46,6 @@ sed -i "s/ro.debuggable=0/ro.debuggable=1/g" $1/build.prop
 sed -i "s/persist.sys.usb.config=none/persist.sys.usb.config=adb/g" $1/system_ext/etc/build.prop
 sed -i "/on property:vendor.sys.usb.adb.disabled/d " $1/etc/init/hw/init.usb.rc
 sed -i "/setprop sys.usb.adb.disabled/d " $1/etc/init/hw/init.usb.rc
+
+# Include vendor overlaysby default
+cat $thispath/rw-system.add.sh >> $1/bin/rw-system.sh
