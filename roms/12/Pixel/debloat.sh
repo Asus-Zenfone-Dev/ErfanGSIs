@@ -75,5 +75,3 @@ rm -rf $1/product/priv-app/AndroidAutoStubPrebuilt
 rm -rf $1/product/priv-app/SafetyHubPrebuilt
 rm -rf $1/product/priv-app/DreamlinerPrebuilt
 rm -rf $1/product/priv-app/DreamlinerUpdater
-rm -rf $1/product/priv-app/SetupWizardPrebuilt
-rm -rf $1/system_ext/priv-app/PixelSetupWizard
