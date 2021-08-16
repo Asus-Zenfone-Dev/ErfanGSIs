@@ -54,11 +54,6 @@ echo "ro.cp_system_other_odex=0" >> $1/product/etc/build.prop
 # GSI disables non-AOSP nnapi extensions on product partition
 echo "ro.nnapi.extensions.deny_on_product=true" >> $1/product/etc/build.prop
 
-# TODO(b/136212765): the default for LMK
-echo "ro.lmk.kill_heaviest_task=true" >> $1/product/etc/build.prop
-echo "ro.lmk.kill_timeout_ms=100" >> $1/product/etc/build.prop
-echo "ro.lmk.use_minfree_levels=true" >> $1/product/etc/build.prop
-
 #sudo sed -i "s|/dev/uinput               0660   uhid       uhid|/dev/uinput               0660   system     bluetooth|" $1/etc/ueventd.rc
 
 # Disable bpfloader
