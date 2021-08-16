@@ -45,6 +45,7 @@ sed -i "/typetransition location_app/d" $1/etc/selinux/plat_sepolicy.cil
 
 # Drop reboot_on_failure of init.rc
 sed -i "/reboot_on_failure/d" $1/etc/init/hw/init.rc
+sed -i "/reboot_on_failure/d" $1/etc/init/apexd.rc
 
 # GSI always generate dex pre-opt in system image
 echo "ro.cp_system_other_odex=0" >> $1/product/etc/build.prop
