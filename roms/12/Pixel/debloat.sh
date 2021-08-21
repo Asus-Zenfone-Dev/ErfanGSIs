@@ -55,7 +55,6 @@ rm -rf $1/system_ext/app/Flipendo
 rm -rf $1/system_ext/priv-app/GoogleFeedback
 rm -rf $1/system_ext/priv-app/PixelNfc
 rm -rf $1/app/NfcNci
-rm -rf $1/system_ext/app/NfcNci
 rm -rf $1/system_ext/priv-app/YadaYada
 
 # Fix Files-DocumentsUI
@@ -75,3 +74,5 @@ rm -rf $1/product/priv-app/AndroidAutoStubPrebuilt
 rm -rf $1/product/priv-app/SafetyHubPrebuilt
 rm -rf $1/product/priv-app/DreamlinerPrebuilt
 rm -rf $1/product/priv-app/DreamlinerUpdater
+rm -rf $1/system_ext/priv-app/HbmSVManager
+rm -rf $1/product/priv-app/PrebuiltGmsCore
