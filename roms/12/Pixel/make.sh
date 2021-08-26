@@ -6,7 +6,11 @@ thispath=`cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd`
 # Copy changes in system folder
 rsync -ra $thispath/system/ $1/
 
+# Include prebuilt overlays by default
+cat $thispath/rw-system.add.sh >> $1/bin/rw-system.sh
+
 # Append usefull stuff
+echo "ro.support_one_handed_mode=true" >> $1/build.prop
 echo "ro.boot.vendor.overlay.theme=com.google.android.systemui.gxoverlay" >> $1/product/etc/build.prop
 echo "ro.config.ringtone=The_big_adventure.ogg" >> $1/product/etc/build.prop
 echo "ro.config.notification_sound=Popcorn.ogg" >> $1/product/etc/build.prop
@@ -35,6 +39,3 @@ sed -i "/*SYSTEMSERVERCLASSPATH*/d $1/../init.environ.rc
 # Workaround for decrypted issue
 echo "rm -rf /data/system/storage.xml" >> $1/bin/cppreopts.sh
 rm -rf $1/product/etc/security/avb
-
-# Include prebuilt overlays by default
-cat $thispath/rw-system.add.sh >> $1/bin/rw-system.sh
