@@ -31,11 +31,6 @@ sed -i "/dataservice_app/d" $1/product/etc/selinux/product_seapp_contexts
 sed -i "/dataservice_app/d" $1/system_ext/etc/selinux/system_ext_seapp_contexts
 sed -i "/ro.sys.sdcardfs/d" $1/product/etc/build.prop
 
-# Fix init.environ.rc
-sed -i "/*BOOTCLASSPATH*/d $1/../init.environ.rc
-sed -i "/*DEX2OATBOOTCLASSPATH*/d $1/../init.environ.rc
-sed -i "/*SYSTEMSERVERCLASSPATH*/d $1/../init.environ.rc
-
 # Workaround for decrypted issue
 echo "rm -rf /data/system/storage.xml" >> $1/bin/cppreopts.sh
 rm -rf $1/product/etc/security/avb
