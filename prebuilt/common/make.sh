@@ -31,13 +31,6 @@ sed -i "/sys.usb.controller/d" $plat_property
 sed -i "/sys.usb.config/d" $plat_property
 sed -i "/ro.build.fingerprint/d" $plat_property
 
-# cleanup system_ext_property
-system_ext_property=$1/system_ext/etc/selinux/system_ext_property_contexts
-sed -i '/software.version/d'  $systemdir/system_ext/etc/selinux/system_ext_property_contexts
-sed -i '/vendor/d' $systemdir/system_ext/etc/selinux/system_ext_property_contexts
-sed -i '/secureboot/d' $systemdir/system_ext/etc/selinux/system_ext_property_contexts
-sed -i '/persist/d' $systemdir/system_ext/etc/selinux/system_ext_property_contexts
-sed -i '/oem/d' $systemdir/system_ext/etc/selinux/system_ext_property_contexts
 
 ## Props
 # Append props
