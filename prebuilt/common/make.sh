@@ -31,24 +31,13 @@ sed -i "/sys.usb.controller/d" $plat_property
 sed -i "/sys.usb.config/d" $plat_property
 sed -i "/ro.build.fingerprint/d" $plat_property
 
-
 ## Props
 # Append props
 cat $thispath/build.prop >> $1/build.prop
 # Disable Actionable props
 sed -i "/ro.actionable_compatible_property.enabled/d" $1/etc/prop.default
 sed -i "/ro.actionable_compatible_property.enabled/d" $1/build.prop
-# disable any setupwizard mode
-sed -i "/ro.setupwizard.mode/d" $1/etc/prop.default
-sed -i "/ro.setupwizard.mode/d" $1/build.prop
-sed -i "/ro.setupwizard.mode/d" $1/product/build.prop
-sed -i "/ro.setupwizard.mode/d" $1/product/etc/build.prop
-if [[ -f $1/product/etc/build.prop ]]; then
-    echo "ro.setupwizard.mode=DISABLED" >> $1/product/etc/build.prop
-else
-    echo "ro.setupwizard.mode=DISABLED" >> $1/etc/prop.default
-    echo "ro.setupwizard.mode=DISABLED" >> $1/product/build.prop
-fi
+
 # Disable vndk lite
 if [[ -f $1/product/etc/build.prop ]]; then
     echo "ro.vndk.lite=false" >> $1/product/etc/build.prop
