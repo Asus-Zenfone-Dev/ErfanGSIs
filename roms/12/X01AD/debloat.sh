@@ -75,3 +75,7 @@ rm -rf $1/product/priv-app/SafetyHubPrebuilt
 rm -rf $1/product/priv-app/DreamlinerPrebuilt
 rm -rf $1/product/priv-app/DreamlinerUpdater
 rm -rf $1/system_ext/priv-app/HbmSVManager
+
+# Fix Wifi
+rm -rf $1/product/overlay/WifiOverlay
+rm -rf $1/product/overlay/PixelTetheringOverlay.apk
