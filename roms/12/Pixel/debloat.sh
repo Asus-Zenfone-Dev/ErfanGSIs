@@ -3,6 +3,10 @@
 systempath=$1
 thispath=`cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd`
 
+# Bluetooth
+rm -rf $1/etc/permissions/android.hardware.bluetooth.xml
+rm -rf $1/etc/permissions/android.hardware.bluetooth_le.xml
+
 # Delete Google apps
 rm -rf $1/app/datastatusnotification
 rm -rf $1/app/QAS_DVC_MSP_VZW
